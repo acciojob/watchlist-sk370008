@@ -61,9 +61,7 @@ public class MovieRepository {
     public List<String> getMoviesByDirectorName(String name){
         List<String> allMovies = new ArrayList<>();
         if(moviesDirectorHashMap.containsKey(name)){
-            for(String movie : moviesDirectorHashMap.keySet()){
-                allMovies.add(movie);
-            }
+            allMovies = moviesDirectorHashMap.get(name);
         }
         return allMovies;
     }
