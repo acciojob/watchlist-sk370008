@@ -66,7 +66,7 @@ public class MovieRepository {
 
     public List<String> findAllMovies(){
         List<String> allMovies = new ArrayList<>();
-        for(String movie:moviesDirectorHashMap.keySet()){
+        for(String movie:moviesHashMap.keySet()){
             allMovies.add(movie);
         }
         return allMovies;
