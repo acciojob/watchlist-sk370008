@@ -11,9 +11,15 @@ import java.util.List;
 public class MovieRepository {
 
 
-    HashMap<String,Movie> moviesHashMap = new HashMap<>();
-    HashMap<String,Director> directorHashMap = new HashMap<>();
-    HashMap<String, List<String>> moviesDirectorHashMap = new HashMap<>();
+    private HashMap<String,Movie> moviesHashMap;
+    private HashMap<String,Director> directorHashMap;
+    private HashMap<String, List<String>> moviesDirectorHashMap;
+
+    public MovieRepository() {
+        this.moviesHashMap = new HashMap<>();
+        this.directorHashMap = new HashMap<>();
+        this.moviesDirectorHashMap = new HashMap<>();
+    }
 
     public void addMovie(Movie movie){
        String movieName = movie.getName();
@@ -27,13 +33,11 @@ public class MovieRepository {
 
     //Movie director pair different from kunal, check here first if there is error
     public void addMovieDirectorPair(String movieName,String directorName){
-        List<String> currentMovies = new ArrayList<>();
-        if(moviesDirectorHashMap.containsKey(directorName)){
-            currentMovies = moviesDirectorHashMap.get(directorName);
-            currentMovies.add(movieName);
-            moviesDirectorHashMap.put(directorName,currentMovies);
-        }
-        else {
+        if(moviesHashMap.containsKey(movieName) && directorHashMap.containsKey(directorName)){
+            moviesHashMap.put(movieName,moviesHashMap.get(movieName));
+            directorHashMap.put(directorName,directorHashMap.get(directorName));
+            List<String> currentMovies = new ArrayList<>();
+            if (moviesDirectorHashMap.containsKey(directorName)) currentMovies = moviesDirectorHashMap.get(directorName);
             currentMovies.add(movieName);
             moviesDirectorHashMap.put(directorName,currentMovies);
         }
