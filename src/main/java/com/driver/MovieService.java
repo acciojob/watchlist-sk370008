@@ -12,4 +12,8 @@ public class MovieService {
     public void addMovie(Movie movie){
         movieRepository.addMovie(movie);
     }
+
+    public void addDirector(Director director){
+        movieRepository.addDirector(director);
+    }
 }

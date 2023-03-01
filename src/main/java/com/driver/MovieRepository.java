@@ -18,4 +18,9 @@ public class MovieRepository {
        moviesHashMap.put(movieName,movie);
     }
 
+    public void addDirector(Director director){
+        String directorName = director.getName();
+        directorHashMap.put(directorName,director);
+    }
+
 }
