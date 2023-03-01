@@ -33,6 +33,10 @@ public class MovieRepository {
             currentMovies.add(movieName);
             moviesDirectorHashMap.put(directorName,currentMovies);
         }
+        else {
+            currentMovies.add(movieName);
+            moviesDirectorHashMap.put(directorName,currentMovies);
+        }
     }
 
 
